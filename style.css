@@ -1,0 +1,74 @@
+* {
+    width: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background: #86aace;
+
+    overflow-x: hidden;
+}
+
+.gradient-decent {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+}
+.gradient-decent > * {
+    margin: 10px auto;
+}
+
+.gradient-decent h2 {
+    width: 60%;
+    text-align: center;
+}
+
+.graph {
+    width: 60%;
+    border: 3px solid #000;
+    aspect-ratio: 1;
+    background: #86aace;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.graph > * {
+    position: absolute;
+}
+
+.graph .point {
+    width: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgb(19, 19, 141);
+
+    transform: translate(-50%, -50%);
+}
+
+.graph .line {
+    height: 2px;
+    background: #000;
+
+    transform-origin: center;
+    transition: 0.5s;
+}
+
+
+.gradient-decent .fx {
+    width: 60%;
+
+    font-size: 1.7rem;
+    text-align: center;
+}
