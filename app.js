@@ -1,4 +1,4 @@
-let data = []
+let data = [];
 
 // add point on click //
 const graph = document.querySelector(".graph");
@@ -36,11 +36,11 @@ let theta_1 = 1;
 function gradientDecent() {
     let costSum_0 = 0;
     let costSum_1 = 0;
-    
+
     let n = data.length;
     let learningRate = 0.000005;
 
-    // calc the cost // 
+    // calc the cost //
     for (let i = 0; i < n; i++) {
         let x = data[i].x;
         let y = data[i].y;
@@ -90,12 +90,11 @@ setInterval(() => {
         gradientDecent();
         drawLine();
     }
-}, 1);
+}, 10);
 //  //
 
 const result = document.querySelector(".fx");
 setInterval(() => {
     result.innerHTML =
         "H(x)= " + theta_0.toFixed(2) + " + " + theta_1.toFixed(2) + " * x";
-
-}, 1000);
+}, 500);
