@@ -84,12 +84,34 @@ function drawLine() {
 drawLine();
 //  //
 
+// reset Button //
+const resetBtn = document.querySelector(".gradient-decent .control span.reset");
+
+resetBtn.addEventListener("click", () => {
+    // remove the points from the graph //
+    let graphPoints = document.querySelectorAll(
+        ".gradient-decent .graph .point"
+    );
+    graphPoints.forEach((point) => {
+        graph.removeChild(point);
+    });
+    //  //
+
+    data = []; // remove the points data //
+
+    // reset the function //
+    theta_0 = 0;
+    theta_1 = 1;
+    //  //
+});
+//  //
+
 // repeat the press //
 setInterval(() => {
     if (data.length >= 2) {
         gradientDecent();
-        drawLine();
     }
+    drawLine();
 }, 10);
 //  //
 
