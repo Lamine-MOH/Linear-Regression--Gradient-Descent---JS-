@@ -2,8 +2,8 @@ let data = [];
 
 // add point on click //
 const graph = document.querySelector(".graph");
+const pos = graph.getBoundingClientRect();
 graph.addEventListener("click", (e) => {
-    let pos = e.target.getBoundingClientRect();
     let x = e.clientX - pos.left;
     let y = e.clientY - pos.top;
 
@@ -106,17 +106,34 @@ resetBtn.addEventListener("click", () => {
 });
 //  //
 
+// run button //
+const runBtn = document.querySelector(".run .run-btn");
+let running = false;
+
+runBtn.addEventListener("click", () => {
+    running = running == false ? true : false;
+
+    runBtn.classList.toggle("running");
+    runBtn.innerHTML = runBtn.innerHTML == "Run" ? "Stop" : "Run";
+});
+//  //
+
 // repeat the press //
 setInterval(() => {
-    if (data.length >= 2) {
-        gradientDecent();
+    if (running) {
+        drawLine();
+
+        if (data.length >= 2) {
+            gradientDecent();
+        }
     }
-    drawLine();
 }, 10);
 //  //
 
 const result = document.querySelector(".fx");
 setInterval(() => {
-    result.innerHTML =
-        "H(x)= " + theta_0.toFixed(2) + " + " + theta_1.toFixed(2) + " * x";
+    if (running) {
+        result.innerHTML =
+            "H(x)= " + theta_0.toFixed(2) + " + " + theta_1.toFixed(2) + " * x";
+    }
 }, 500);

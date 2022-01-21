@@ -33,6 +33,38 @@ body {
     /* text-shadow: 2px 2px 10px #000; */
 }
 
+.gradient-decent .run {
+    width: 60%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.gradient-decent .run .run-btn {
+    padding: 10px 15px;
+
+    width: max-content;
+    border-radius: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    cursor: pointer;
+
+    background: #007900;
+
+    transition: 0.1s;
+}
+.gradient-decent .run .run-btn:hover {
+    transform: scale(0.95);
+}
+.gradient-decent .run .run-btn:active {
+    transform: scale(0.8);
+}
+.gradient-decent .run .run-btn.running {
+    background: #f00;
+}
+
 .gradient-decent .control {
     width: 60%;
 
